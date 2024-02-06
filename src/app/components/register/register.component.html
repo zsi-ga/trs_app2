@@ -1,0 +1,93 @@
+<form [formGroup]="registerForm" (ngSubmit)="submitDetails()">
+    <p-card header="Regisztrálás" [style]="{ width: '360px' }">
+      <div class="field">
+        <label for="fullName">Név</label>
+        <input
+          type="text"
+          pInputText
+          formControlName="fullName"
+          class="w-full"
+          name="fullName"
+          placeholder="Irja be a nevét!"
+        />
+        <small
+          *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)"
+          class="block p-error"
+        >
+          <div *ngIf="fullName.errors?.['required']">Név szükséges.</div>
+          <div *ngIf="fullName.errors?.['pattern']">Érvényes név szükséges.</div>
+        </small>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input
+          type="text"
+          pInputText
+          formControlName="email"
+          class="w-full"
+          name="email"
+          placeholder="Irja be az emailt!"
+        />
+        <small
+          *ngIf="email.invalid && (email.dirty || email.touched)"
+          class="block p-error"
+        >
+          <div *ngIf="email.errors?.['required']">Email szükséges.</div>
+          <div *ngIf="email.errors?.['email']">Email érvényes kell legyen.</div>
+        </small>
+      </div>
+      <div class="field">
+        <label for="password">Jelszó</label>
+        <input
+          type="password"
+          pInputText
+          formControlName="password"
+          class="w-full"
+          name="password"
+          placeholder="Irja be a jelszót!"
+        />
+        <small
+          *ngIf="password.invalid && (password.dirty || password.touched)"
+          class="block p-error"
+        >
+          <div *ngIf="password.errors?.['required']">Jelszó szükséges.</div>
+        </small>
+      </div>
+      <div class="field">
+        <label for="confirmPassword">Jelszó ismét</label>
+        <input
+          type="password"
+          pInputText
+          formControlName="confirmPassword"
+          class="w-full"
+          name="confirmPassword"
+          placeholder="Ismételje meg a jelszót!"
+        />
+        <small
+          *ngIf="
+            confirmPassword.invalid &&
+            (confirmPassword.dirty || confirmPassword.touched)
+          "
+          class="block p-error"
+        >
+          <div *ngIf="confirmPassword.errors?.['required']">
+            Ismételje meg a jelszót!
+          </div>
+        </small>
+        <small
+          class="block p-error"
+          *ngIf="registerForm.errors?.['passwordMismatch'] && confirmPassword.valid && password.valid"
+        >
+          A jelszónak egyeznie kell.
+        </small>
+      </div>
+      <p-button
+        label="REGISZTRÁCIÓ"
+        styleClass="w-full"
+        [disabled]="registerForm.invalid"
+        type="submit"
+      ></p-button>
+      <div class="mt-2">Ha már tag: <a routerLink="/login">Bejelentkezés</a></div>
+    </p-card>
+  </form>
+  
