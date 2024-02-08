@@ -11,9 +11,9 @@ export class HomeComponent {
 
   constructor(private router: Router) { }
 
-  logOut() {
+  navigateToQuestionTc() {
     sessionStorage.clear();
-    this.router.navigate(['login']);
+    this.router.navigate(['/question-tc']);
   }
 }
 

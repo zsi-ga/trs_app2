@@ -26,7 +26,7 @@
           formControlName="email"
           class="w-full"
           name="email"
-          placeholder="Irja be az emailt!"
+          placeholder="Irja be a @ktch.hu emailt!"
         />
         <small
           *ngIf="email.invalid && (email.dirty || email.touched)"
@@ -34,6 +34,24 @@
         >
           <div *ngIf="email.errors?.['required']">Email szükséges.</div>
           <div *ngIf="email.errors?.['email']">Email érvényes kell legyen.</div>
+        </small>
+      </div>
+      <div class="field">
+        <label for="fullClass">Osztály</label>
+        <input
+          type="text"
+          pInputText
+          formControlName="fullClass"
+          class="w-full"
+          name="fullClass"
+          placeholder="Irja be az osztályát(pl.:1A)!"
+        />
+        <small
+          *ngIf="fullClass.invalid && (fullClass.dirty || fullClass.touched)"
+          class="block p-error"
+        >
+          <div *ngIf="fullClass.errors?.['required']">Osztály szükséges.</div>
+          <div *ngIf="fullClass.errors?.['pattern']">Érvényes osztály szükséges.</div>
         </small>
       </div>
       <div class="field">

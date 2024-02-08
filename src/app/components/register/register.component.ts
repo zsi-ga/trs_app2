@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
+import { Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { User } from 'src/app/interfaces/auth';
 import { AuthService } from 'src/app/services/auth.service';
 import { passwordMatchValidator } from 'src/app/shared/password-match.directive';
+
 
 @Component({
   selector: 'app-register',
@@ -15,9 +17,11 @@ export class RegisterComponent {
 
   registerForm = this.fb.group({
     fullName: ['', [Validators.required, Validators.pattern(/^[a-zA-Z]+(?: [a-zA-Z]+)*$/)]],
+    fullClass:  ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required],
-    confirmPassword: ['', Validators.required]
+    confirmPassword: ['', Validators.required],
+    
   }, {
     validators: passwordMatchValidator
   })
@@ -31,6 +35,10 @@ export class RegisterComponent {
 
   get fullName() {
     return this.registerForm.controls['fullName'];
+  }
+
+  get fullClass() {
+    return this.registerForm.controls['fullClass'];
   }
 
   get email() {
@@ -51,11 +59,11 @@ export class RegisterComponent {
     this.authService.registerUser(postData as User).subscribe(
       response => {
         console.log(response);
-        this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Register successfully' });
+        this.messageService.add({ severity: 'success', summary: 'Siker', detail: 'Sikeres regisztráció' });
         this.router.navigate(['login'])
       },
       error => {
-        this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Something went wrong' });
+        this.messageService.add({ severity: 'error', summary: 'Hiba', detail: 'Hiba történt' });
       }
     )
   }
