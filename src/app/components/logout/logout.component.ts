@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-logout',
@@ -6,8 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./logout.component.css']
 })
 export class LogoutComponent {
-logOut() {
-throw new Error('Method not implemented.');
+
+  constructor(private router: Router) { }
+
+  logOut() {
+    sessionStorage.clear();
+    this.router.navigate(['login']);
+  }
 }
 
-}
+
+

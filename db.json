@@ -1,91 +1,57 @@
 {
   "users": [
     {
-      "id": "abfe",
-      "fullName": "test",
-      "email": "test@gmail.com",
-      "password": "12345"
-    },
-    {
-      "id": "98a0",
-      "fullName": "test",
-      "email": "test1@gmail.com",
-      "password": "123456"
-    },
-    {
-      "id": "d66b",
-      "fullName": "bigbang",
-      "email": "bigbang@gmail.com",
-      "password": "12"
-    },
-    {
-      "id": "c645",
-      "fullName": "bigo",
-      "email": "bigbangg@gmail.com",
-      "password": "123"
-    },
-    {
-      "id": "bcbd",
-      "fullName": "bigo",
-      "fullClass": "1A",
-      "email": "bigbang@gmail.com",
-      "password": "123A"
-    },
-    {
-      "id": "d25d",
-      "fullName": "bigo",
-      "fullClass": "1A",
-      "email": "bigbang@gmail.com",
-      "password": "1234"
-    },
-    {
-      "id": "8fb1",
-      "fullName": "bigo",
-      "fullClass": "1A",
-      "email": "bigbang@gmail.com",
-      "password": "123"
-    },
-    {
-      "id": "5d59",
+      "id": "df92",
       "fullName": "bigbang",
       "fullClass": "1A",
       "email": "bigbang@gmail.com",
       "password": "123"
     },
     {
-      "id": "5224",
-      "fullName": "bigo",
-      "fullClass": "1A",
-      "email": "bigbang@gmail.com",
-      "password": "123"
+      "id": "0413",
+      "result_tc": 12
     },
     {
-      "id": "d617",
-      "fullName": "bigbang",
-      "fullClass": "2B",
-      "email": "bigbang@gmail.com",
-      "password": "123"
+      "id": "df34",
+      "result_tc": 30,
+      "result_sc": 30,
+      "oktato_1": 30
     },
     {
-      "id": "beb6",
-      "fullName": "bigbang",
-      "fullClass": "2B",
-      "email": "bigbang@gmail.com",
-      "password": "1"
+      "id": "84cf",
+      "result_tc": 30,
+      "result_sc": 30,
+      "oktato_1": 30
     },
     {
-      "id": "7d50",
-      "fullName": "bigbangg",
-      "fullClass": "1A",
-      "email": "bigbangg@gmail.com",
-      "password": "1234"
+      "id": "29a7",
+      "result_tc": 0,
+      "result_sc": 0,
+      "oktato_0": 0
     },
     {
-      "id": "32ee",
-      "fullName": "aaa",
-      "fullClass": "1A",
-      "email": "bigbang@gmail.com",
-      "password": "12"
+      "id": "e08c",
+      "result_tc": 8,
+      "result_sc": 8,
+      "oktato_2": 8
+    },
+    {
+      "id": "f194",
+      "result_tc": 8,
+      "result_sc": 8,
+      "oktato_2": 8
+    },
+    {
+      "id": "2489",
+      "result_tc": 16,
+      "result_sc": 16,
+      "oktato_2": 16
+    },
+    {
+      "id": "e6b6",
+      "result_tc": 16,
+      "result_sc": 16,
+      "oktato_3": 16
     }
   ]
 }

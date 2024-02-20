@@ -11,7 +11,7 @@ export class HomeComponent {
 
   constructor(private router: Router) { }
 
-  navigateToQuestionTc() {
+  navigateToQuestionSc() {
     sessionStorage.clear();
     this.router.navigate(['/question-tc']);
   }

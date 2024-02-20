@@ -7,7 +7,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastModule } from 'primeng/toast';
@@ -15,9 +15,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MessageService } from 'primeng/api';
 import { MessagesModule } from 'primeng/messages';
 import { QuestionScComponent } from './components/question-sc/question-sc.component';
-import { FinishComponent } from './components/finish/finish.component';
-import { LogoutComponent } from './components/logout/logout.component';
+import { QuestionTcComponent } from './components/question-tc/question-tc.component';
 import { RouterModule } from '@angular/router';
+import { AuthService } from './services/auth.service';
+import { LogoutComponent } from './components/logout/logout.component';
+import { FinishComponent } from './components/finish/finish.component';
+
+
+
+
+
+
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -26,9 +38,12 @@ import { RouterModule } from '@angular/router';
     RegisterComponent,
     HomeComponent,
     QuestionScComponent,
-    FinishComponent,
+    QuestionTcComponent,
     LogoutComponent,
-   
+    FinishComponent
+
+ 
+
   ],
   imports: [
     BrowserModule,
@@ -41,10 +56,16 @@ import { RouterModule } from '@angular/router';
     ToastModule,
     BrowserAnimationsModule,
     MessagesModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    
+    
+
+
+  
     
   ],
-  providers: [MessageService],
+  providers: [MessageService, AuthService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

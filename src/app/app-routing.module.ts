@@ -5,6 +5,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { authGuard } from './guards/auth.guard';
 import { QuestionTcComponent } from './components/question-tc/question-tc.component';
+import { QuestionScComponent } from './components/question-sc/question-sc.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'question-tc', 
     component: QuestionTcComponent
+  },
+  {
+    path: 'question-sc', 
+    component: QuestionScComponent
   },
   {
     path: '', redirectTo: 'home', pathMatch: 'full'

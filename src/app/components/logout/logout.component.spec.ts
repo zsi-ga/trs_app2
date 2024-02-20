@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { LogoutComponent } from './logout.component';
 
 describe('LogoutComponent', () => {
@@ -19,3 +18,4 @@ describe('LogoutComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
