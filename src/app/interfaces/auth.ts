@@ -5,7 +5,7 @@ export interface User {
     fullClass: string;
     password: string;
     result_tc: number;
-    result_sc: number;
+    
     
    
    

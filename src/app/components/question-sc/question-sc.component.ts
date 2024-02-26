@@ -20,17 +20,17 @@ export class QuestionScComponent implements OnInit {
     { text: 'Az oktatás/tanulás során felmerülő problémákat az oktatóval közösen meg tudjuk oldani.', score: 0 },
   ];
 
-  options = Array.from({length: 11}, (_, i) => {
-    if (i === 0) {
-      return { label: '', value: i, disabled: false };
-    } else {
-      return { label: `Oktató_${i}`, value: i, disabled: false };
-    }
+  instructorNames: string[] = ['Matyi', 'Pisti', 'Jani', 'Gabi', 'Zoli', 'Andi', 'Kati', 'Béla', 'Zsolt', 'Eszter'];
+
+  options = this.instructorNames.map((name, index) => {
+    return { label: name, value: index + 1, disabled: false };
   });
 
   selectedScore: number = 0;
   totalScore: number = 0;
   user: any = {};
+
+  instructorResults: { [key: string]: number } = {};
 
   constructor(private router: Router, private authService: AuthService) {}
 
@@ -39,19 +39,19 @@ export class QuestionScComponent implements OnInit {
   updateSelectedScore() {
     if (this.selectedScore === 0) return;
 
-    const selectedInstructorIndex = this.selectedScore;
+    const selectedInstructorLabel = this.instructorNames[this.selectedScore - 1];
 
-    this.questions.forEach(question => {
-      question.score = selectedInstructorIndex - 1;
-    });
+    if (!(selectedInstructorLabel in this.instructorResults)) {
+      this.questions.forEach(question => {
+        question.score = this.selectedScore - 1;
+      });
+      this.calculateTotalScore();
 
-    this.calculateTotalScore();
-    
-    // Kikapcsoljuk a kiválasztott oktatót az opciók között
-    const selectedInstructorLabel = `Oktató_${selectedInstructorIndex}`;
-    const selectedOption = this.options.find(option => option.label === selectedInstructorLabel);
-    if (selectedOption) {
-      selectedOption.disabled = true;
+      // Kikapcsoljuk a kiválasztott oktatót az opciók között
+      const selectedOption = this.options.find(option => option.label === selectedInstructorLabel);
+      if (selectedOption) {
+        selectedOption.disabled = true;
+      }
     }
   }
 
@@ -64,12 +64,14 @@ export class QuestionScComponent implements OnInit {
   
     this.calculateTotalScore();
   
-    const selectedInstructorIndex = this.selectedScore;
-    const selectedInstructorLabel = `Oktató_${selectedInstructorIndex}`;
+    const selectedInstructorLabel = this.instructorNames[this.selectedScore - 1];
   
     this.user.result_tc = this.totalScore;
-    this.user.result_sc = this.totalScore;
+   
     this.user[selectedInstructorLabel] = this.totalScore;
+
+    // Eredmények tárolása az oktatóhoz
+    this.instructorResults[selectedInstructorLabel] = this.totalScore;
   
     console.log('Eredmények:', this.user);
   
@@ -83,12 +85,14 @@ export class QuestionScComponent implements OnInit {
   
     this.calculateTotalScore();
   
-    const selectedInstructorIndex = this.selectedScore;
-    const selectedInstructorLabel = `Oktató_${selectedInstructorIndex}`;
+    const selectedInstructorLabel = this.instructorNames[this.selectedScore - 1];
   
     this.user.result_tc = this.totalScore;
-    this.user.result_sc = this.totalScore;
+  
     this.user[selectedInstructorLabel] = this.totalScore;
+
+    // Eredmények tárolása az oktatóhoz
+    this.instructorResults[selectedInstructorLabel] = this.totalScore;
   
     console.log('Eredmények:', this.user);
   
