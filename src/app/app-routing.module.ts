@@ -6,6 +6,7 @@ import { HomeComponent } from './components/home/home.component';
 import { authGuard } from './guards/auth.guard';
 import { QuestionTcComponent } from './components/question-tc/question-tc.component';
 import { QuestionScComponent } from './components/question-sc/question-sc.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 const routes: Routes = [
   {
@@ -30,8 +31,15 @@ const routes: Routes = [
     component: QuestionScComponent
   },
   {
+    path: 'logout', 
+    component: LogoutComponent
+  },
+
+
+  {
     path: '', redirectTo: 'home', pathMatch: 'full'
   }
+  
 ];
 
 @NgModule({

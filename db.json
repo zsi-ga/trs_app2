@@ -1,57 +1,330 @@
 {
   "users": [
     {
-      "id": "df92",
-      "fullName": "bigbang",
+      "id": "c786",
+      "fullName": "bing bang",
       "fullClass": "1A",
       "email": "bigbang@gmail.com",
       "password": "123"
     },
     {
-      "id": "0413",
-      "result_tc": 12
+      "id": "2b60",
+      "result_tc": 14
     },
     {
-      "id": "df34",
-      "result_tc": 30,
-      "result_sc": 30,
-      "oktato_1": 30
+      "id": "ef70",
+      "result_tc": 8,
+      "result_sc": 8,
+      "Oktató_1": 8
     },
     {
-      "id": "84cf",
-      "result_tc": 30,
-      "result_sc": 30,
-      "oktato_1": 30
+      "id": "3854",
+      "result_tc": 42,
+      "result_sc": 42,
+      "Oktató_7": 42
     },
     {
-      "id": "29a7",
+      "id": "d925",
+      "result_tc": 42,
+      "result_sc": 42,
+      "Oktató_7": 42
+    },
+    {
+      "id": "f3e1",
+      "result_tc": 42,
+      "result_sc": 42,
+      "Oktató_7": 42
+    },
+    {
+      "id": "e775",
+      "result_tc": 3
+    },
+    {
+      "id": "85aa",
+      "result_tc": 8,
+      "result_sc": 8,
+      "Oktató_2": 8
+    },
+    {
+      "id": "3f04",
+      "result_tc": 24,
+      "result_sc": 24,
+      "Oktató_2": 8,
+      "Oktató_4": 24
+    },
+    {
+      "id": "df11",
+      "result_tc": 32,
+      "result_sc": 32,
+      "Oktató_2": 8,
+      "Oktató_4": 24,
+      "Oktató_5": 32
+    },
+    {
+      "id": "2144",
+      "result_tc": 4
+    },
+    {
+      "id": "0d04",
+      "result_tc": 48,
+      "result_sc": 48,
+      "Oktató_7": 48
+    },
+    {
+      "id": "f348",
+      "result_tc": 48,
+      "result_sc": 48,
+      "Oktató_7": 48
+    },
+    {
+      "id": "b4cb",
       "result_tc": 0,
       "result_sc": 0,
-      "oktato_0": 0
+      "Oktató_0": 0
     },
     {
-      "id": "e08c",
+      "id": "38ef",
       "result_tc": 8,
       "result_sc": 8,
-      "oktato_2": 8
+      "Oktató_2": 8
     },
     {
-      "id": "f194",
+      "id": "f262",
+      "result_tc": 0,
+      "result_sc": 0,
+      "Oktató_0": 0
+    },
+    {
+      "id": "ab3e",
+      "result_tc": 0,
+      "result_sc": 0,
+      "Oktató_1": 0
+    },
+    {
+      "id": "6b52",
       "result_tc": 8,
       "result_sc": 8,
-      "oktato_2": 8
+      "Oktató_1": 0,
+      "Oktató_2": 8
     },
     {
-      "id": "2489",
-      "result_tc": 16,
-      "result_sc": 16,
-      "oktato_2": 16
+      "id": "6973",
+      "result_tc": 8,
+      "result_sc": 8,
+      "Oktató_1": 0,
+      "Oktató_2": 8
     },
     {
-      "id": "e6b6",
+      "id": "5067",
+      "result_tc": 8,
+      "result_sc": 8,
+      "Oktató_1": 0,
+      "Oktató_2": 8
+    },
+    {
+      "id": "e38a",
+      "result_tc": 32,
+      "result_sc": 32,
+      "Oktató_1": 0,
+      "Oktató_2": 8,
+      "Oktató_5": 32
+    },
+    {
+      "id": "fe1a",
+      "result_tc": 0,
+      "result_sc": 0,
+      "Oktató_1": 0
+    },
+    {
+      "id": "b207",
+      "result_tc": 8,
+      "result_sc": 8,
+      "Oktató_1": 0,
+      "Oktató_2": 8
+    },
+    {
+      "id": "78d2",
+      "result_tc": 8,
+      "result_sc": 8,
+      "Oktató_2": 8
+    },
+    {
+      "id": "a66d",
+      "result_tc": 24,
+      "result_sc": 24,
+      "Oktató_2": 8,
+      "Oktató_4": 24
+    },
+    {
+      "id": "ddf9",
+      "result_tc": 0,
+      "result_sc": 0,
+      "Oktató_1": 0
+    },
+    {
+      "id": "5722",
+      "result_tc": 8,
+      "result_sc": 8,
+      "Oktató_1": 0,
+      "Oktató_2": 8
+    },
+    {
+      "id": "015f",
       "result_tc": 16,
       "result_sc": 16,
-      "oktato_3": 16
+      "Oktató_1": 0,
+      "Oktató_2": 8,
+      "Oktató_3": 16
+    },
+    {
+      "id": "ffc3",
+      "result_tc": 24,
+      "result_sc": 24,
+      "Oktató_1": 0,
+      "Oktató_2": 8,
+      "Oktató_3": 16,
+      "Oktató_4": 24
+    },
+    {
+      "id": "be11",
+      "result_tc": 31,
+      "result_sc": 31,
+      "Oktató_1": 0,
+      "Oktató_2": 8,
+      "Oktató_3": 16,
+      "Oktató_4": 24,
+      "Oktató_5": 31
+    },
+    {
+      "id": "913a",
+      "result_tc": 32,
+      "result_sc": 32,
+      "Oktató_1": 0,
+      "Oktató_2": 8,
+      "Oktató_3": 16,
+      "Oktató_4": 24,
+      "Oktató_5": 31,
+      "Oktató_6": 32
+    },
+    {
+      "id": "d85d",
+      "result_tc": 35,
+      "result_sc": 35,
+      "Oktató_1": 0,
+      "Oktató_2": 8,
+      "Oktató_3": 16,
+      "Oktató_4": 24,
+      "Oktató_5": 31,
+      "Oktató_6": 32,
+      "Oktató_7": 35
+    },
+    {
+      "id": "fbef",
+      "result_tc": 36,
+      "result_sc": 36,
+      "Oktató_1": 0,
+      "Oktató_2": 8,
+      "Oktató_3": 16,
+      "Oktató_4": 24,
+      "Oktató_5": 31,
+      "Oktató_6": 32,
+      "Oktató_7": 35,
+      "Oktató_8": 36
+    },
+    {
+      "id": "bf49",
+      "result_tc": 46,
+      "result_sc": 46,
+      "Oktató_1": 0,
+      "Oktató_2": 8,
+      "Oktató_3": 16,
+      "Oktató_4": 24,
+      "Oktató_5": 31,
+      "Oktató_6": 32,
+      "Oktató_7": 35,
+      "Oktató_8": 36,
+      "Oktató_9": 46
+    },
+    {
+      "id": "be56",
+      "result_tc": 46,
+      "result_sc": 46,
+      "Oktató_1": 0,
+      "Oktató_2": 8,
+      "Oktató_3": 16,
+      "Oktató_4": 24,
+      "Oktató_5": 31,
+      "Oktató_6": 32,
+      "Oktató_7": 35,
+      "Oktató_8": 36,
+      "Oktató_9": 46
+    },
+    {
+      "id": "1fcc",
+      "result_tc": 59,
+      "result_sc": 59,
+      "Oktató_1": 0,
+      "Oktató_2": 8,
+      "Oktató_3": 16,
+      "Oktató_4": 24,
+      "Oktató_5": 31,
+      "Oktató_6": 32,
+      "Oktató_7": 35,
+      "Oktató_8": 36,
+      "Oktató_9": 46,
+      "Oktató_10": 59
+    },
+    {
+      "id": "b95a",
+      "result_tc": 59,
+      "result_sc": 59,
+      "Oktató_1": 0,
+      "Oktató_2": 8,
+      "Oktató_3": 16,
+      "Oktató_4": 24,
+      "Oktató_5": 31,
+      "Oktató_6": 32,
+      "Oktató_7": 35,
+      "Oktató_8": 36,
+      "Oktató_9": 46,
+      "Oktató_10": 59
+    },
+    {
+      "id": "73e4",
+      "result_tc": 19
+    },
+    {
+      "id": "b103",
+      "result_tc": 0,
+      "result_sc": 0,
+      "Oktató_0": 0
+    },
+    {
+      "id": "3d4d",
+      "result_tc": 0,
+      "result_sc": 0,
+      "Oktató_1": 0
+    },
+    {
+      "id": "9d62",
+      "result_tc": 0,
+      "result_sc": 0,
+      "Oktató_1": 0
+    },
+    {
+      "id": "86ac",
+      "result_tc": 8,
+      "result_sc": 8,
+      "Oktató_1": 0,
+      "Oktató_2": 8
+    },
+    {
+      "id": "566d",
+      "result_tc": 16,
+      "result_sc": 16,
+      "Oktató_1": 0,
+      "Oktató_2": 8,
+      "Oktató_3": 16
     }
   ]
 }

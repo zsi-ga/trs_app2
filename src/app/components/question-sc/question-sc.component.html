@@ -1,3 +1,4 @@
+
 <div>
   <label for="scoreSelection">Válassza ki az az oktatót aki tanítja, majd értékelje!</label>
   <select id="scoreSelection" [(ngModel)]="selectedScore" (change)="updateSelectedScore()">
@@ -17,11 +18,13 @@
 </div>
 
 <div *ngIf="selectedScore === 0">
-  <p>Addig értékeljen amíg talál olyan oktatót, aki tanítja! Ha nincs több jelentkezzen ki!
-
-  </p>
+  <p>Addig értékeljen amíg talál olyan oktatót, aki tanítja! Ha nincs több nyomja meg a Kijelentkezéshez gombot!</p>
 </div>
 
+<p>
+
+</p>
+
 <div *ngIf="options.length > 1">
-  <button (click)="saveResults()">Kijelentkezés</button>
+  <p-button class="save-button" (click)="saveResultsAndLogout()">Kijelentkezéshez</p-button>
 </div>

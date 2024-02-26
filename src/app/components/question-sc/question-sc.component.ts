@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { Question } from 'src/app/interfaces/question';
@@ -8,7 +8,7 @@ import { Question } from 'src/app/interfaces/question';
   templateUrl: './question-sc.component.html',
   styleUrls: ['./question-sc.component.css']
 })
-export class QuestionScComponent {
+export class QuestionScComponent implements OnInit {
   questions: Question[] = [
     { text: 'Az oktató mindig pontosan kezdi és fejezi be a tanórát.', score: 0 },
     { text: 'Véleményem szerint a rendelkezésre álló időt megfelelően kihasználjuk, mert az oktató mindig hasznos és érdekes órákat tart.', score: 0 },
@@ -20,19 +20,13 @@ export class QuestionScComponent {
     { text: 'Az oktatás/tanulás során felmerülő problémákat az oktatóval közösen meg tudjuk oldani.', score: 0 },
   ];
 
-  options = [
-    { label: '', value: 0 },
-    { label: 'Oktató_1', value: 1, disabled: false },
-    { label: 'Oktató_2', value: 2, disabled: false },
-    { label: 'Oktató_3', value: 3, disabled: false },
-    { label: 'Oktató_4', value: 4, disabled: false },
-    { label: 'Oktató_5', value: 5, disabled: false },
-    { label: 'Oktató_6', value: 6, disabled: false },
-    { label: 'Oktató_7', value: 7, disabled: false },
-    { label: 'Oktató_8', value: 8, disabled: false },
-    { label: 'Oktató_9', value: 9, disabled: false },
-    { label: 'Oktató_10', value: 10, disabled: false },
-  ];
+  options = Array.from({length: 11}, (_, i) => {
+    if (i === 0) {
+      return { label: '', value: i, disabled: false };
+    } else {
+      return { label: `Oktató_${i}`, value: i, disabled: false };
+    }
+  });
 
   selectedScore: number = 0;
   totalScore: number = 0;
@@ -40,13 +34,25 @@ export class QuestionScComponent {
 
   constructor(private router: Router, private authService: AuthService) {}
 
+  ngOnInit() {}
+
   updateSelectedScore() {
+    if (this.selectedScore === 0) return;
+
+    const selectedInstructorIndex = this.selectedScore;
+
     this.questions.forEach(question => {
-      question.score = this.selectedScore === 0 ? 0 : this.selectedScore - 1;
+      question.score = selectedInstructorIndex - 1;
     });
+
     this.calculateTotalScore();
     
-    this.options.splice(this.selectedScore, 1);
+    // Kikapcsoljuk a kiválasztott oktatót az opciók között
+    const selectedInstructorLabel = `Oktató_${selectedInstructorIndex}`;
+    const selectedOption = this.options.find(option => option.label === selectedInstructorLabel);
+    if (selectedOption) {
+      selectedOption.disabled = true;
+    }
   }
 
   calculateTotalScore() {
@@ -58,22 +64,42 @@ export class QuestionScComponent {
   
     this.calculateTotalScore();
   
-    const selectedInstructor = `oktato_${this.selectedScore}`;
+    const selectedInstructorIndex = this.selectedScore;
+    const selectedInstructorLabel = `Oktató_${selectedInstructorIndex}`;
   
-   
-    const resultObject = {
-      id: this.user.id,
-      result_tc: this.totalScore,
-      result_sc: this.totalScore,
-      [selectedInstructor]: this.totalScore
-    };
+    this.user.result_tc = this.totalScore;
+    this.user.result_sc = this.totalScore;
+    this.user[selectedInstructorLabel] = this.totalScore;
   
-    console.log('Eredmények:', resultObject);
+    console.log('Eredmények:', this.user);
   
-  
-    this.authService.saveUserResults(resultObject).subscribe(() => {
+    this.authService.saveUserResults(this.user).subscribe(() => {
       console.log('Eredmények sikeresen mentve.');
-      this.router.navigate(['/question-sc']);
+    });
+  }
+
+  saveResultsAndLogout() {
+    console.log('Eredmények mentése és kijelentkezés...');
+  
+    this.calculateTotalScore();
+  
+    const selectedInstructorIndex = this.selectedScore;
+    const selectedInstructorLabel = `Oktató_${selectedInstructorIndex}`;
+  
+    this.user.result_tc = this.totalScore;
+    this.user.result_sc = this.totalScore;
+    this.user[selectedInstructorLabel] = this.totalScore;
+  
+    console.log('Eredmények:', this.user);
+  
+    this.authService.saveUserResults(this.user).subscribe(() => {
+      console.log('Eredmények sikeresen mentve és kijelentkezve.');
+      
+      
+      this.authService.logOut();
+      
+      
+      this.router.navigate(['/logout']);
     });
   }
 }

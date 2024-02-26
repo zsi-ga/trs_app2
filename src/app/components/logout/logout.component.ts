@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -14,7 +15,12 @@ export class LogoutComponent {
     sessionStorage.clear();
     this.router.navigate(['login']);
   }
+
+  navigateBack() {
+    this.router.navigate(['question-sc']);
+  }
 }
+
 
 
 
