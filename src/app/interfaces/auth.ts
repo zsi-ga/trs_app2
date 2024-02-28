@@ -1,10 +1,12 @@
 export interface User {
-    id: string;
+    
+    
+    id: number;
     email: string;
     fullName: string;
     fullClass: string;
     password: string;
-    result_tc: number;
+    
     
     
    

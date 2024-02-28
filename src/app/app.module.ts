@@ -20,6 +20,7 @@ import { RouterModule } from '@angular/router';
 import { AuthService } from './services/auth.service';
 import { LogoutComponent } from './components/logout/logout.component';
 import { FinishComponent } from './components/finish/finish.component';
+import { ResultComponent } from './components/result/result.component';
 
 
 
@@ -40,7 +41,8 @@ import { FinishComponent } from './components/finish/finish.component';
     QuestionScComponent,
     QuestionTcComponent,
     LogoutComponent,
-    FinishComponent
+    FinishComponent,
+    ResultComponent
 
  
 
