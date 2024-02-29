@@ -1,92 +1,61 @@
 {
   "users": [
     {
-      "id": "b102",
-      "fullName": "bigbang",
+      "id": "e26c",
+      "fullName": "bing bang",
       "fullClass": "1A",
       "email": "bigbang@gmail.com",
       "password": "123"
     },
     {
-      "id": "effe",
-      "result_tc": 4
-    },
-    {
-      "id": "30af",
-      "Matyi": 0,
-      "Jani": 16,
-      "Zoli": 32
-    },
-    {
-      "id": "b6e0",
-      "result_tc": 2
-    },
-    {
-      "id": "b09b",
-      "Matyi": 0,
-      "Jani": 16,
-      "Zoli": 32,
-      "Béla": 56
-    },
-    {
-      "id": "3ef9",
-      "Kati": 48
-    },
-    {
-      "id": "240e",
-      "result_tc": 0
-    },
-    {
-      "id": "4d80"
-    },
-    {
-      "id": "e124",
-      "result_tc": 5
-    },
-    {
-      "id": "b449",
-      "Matyi": 0,
-      "Jani": 16,
-      "Zsolt": 64
-    },
-    {
-      "id": "e1db",
-      "Andi": 40
-    },
-    {
-      "id": "2c09",
-      "result_tc": 5
-    },
-    {
-      "id": "f586",
-      "Pisti": 8,
-      "Kati": 48
-    },
-    {
-      "id": "27e6",
-      "Gabi": 24
-    },
-    {
-      "id": "7c63",
-      "result_tc": 5
-    },
-    {
-      "id": "dc86",
-      "Matyi": 0
-    },
-    {
-      "id": "73a4",
-      "Jani": 16
-    },
-    {
-      "id": "5b65",
+      "id": "b574",
       "result_tc": 3
     },
     {
-      "id": "746a",
-      "Jani": 16,
+      "id": "822c",
+      "Matyi": 0,
+      "Kati": 48,
+      "Zsolt": 64
+    },
+    {
+      "id": "3b14",
+      "fullName": "Malacka",
+      "fullClass": "3B",
+      "email": "bigbangb@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "209d",
+      "result_tc": 14
+    },
+    {
+      "id": "f3bb",
+      "Gabi": 24,
       "Béla": 56,
-      "Andi": 40
+      "Eszter": 72
+    },
+    {
+      "id": "bd5b",
+      "fullName": "Mikka Makka",
+      "fullClass": "2Szoft",
+      "email": "Mikka@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "cee5",
+      "result_tc": 12
+    },
+    {
+      "id": "714e",
+      "Jani": 16,
+      "Kati": 48,
+      "Eszter": 72,
+      "Andi": 40,
+      "Gabi": 24,
+      "Béla": 56,
+      "Pisti": 8,
+      "Matyi": 0,
+      "Zoli": 32
     }
   ]
 }
