@@ -8,6 +8,7 @@ import { QuestionTcComponent } from './components/question-tc/question-tc.compon
 import { QuestionScComponent } from './components/question-sc/question-sc.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { ResultComponent } from './components/result/result.component'; // Importáld a ResultComponentet
+import { FinishComponent } from './components/finish/finish.component'; // Importáld a FinishComponentet
 
 const routes: Routes = [
   {
@@ -39,6 +40,11 @@ const routes: Routes = [
     path: 'result', 
     component: ResultComponent
   },
+  {
+    path: 'finish', 
+    component: FinishComponent
+  },
+  
   {
     path: '', redirectTo: 'home', pathMatch: 'full'
   }

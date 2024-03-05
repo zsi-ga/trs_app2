@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
-interface UserData {
+export interface UserData {
   fullName: string;
   email: string;
   fullClass: string;
   result_tc: number;
   scores: { name: string, score: number }[];
 }
+
 
 @Component({
   selector: 'app-result',
@@ -36,37 +37,29 @@ export class ResultComponent implements OnInit {
   refreshData() {
     this.http.get<any[]>('http://localhost:3000/users').subscribe(
       (data: any[]) => {
-        this.results = [];
-        this.results_tc = [];
-        this.scoresData = [];
+        this.results = data.map(item => {
+          const scores = [];
+          let result_tc = 0;
   
-        let currentUser: UserData = { fullName: '', email: '', fullClass: '', result_tc: 0, scores: [] };
-        
-        data.forEach(item => {
-          if (item.fullName) {
-            if (currentUser.fullName) {
-              this.results.push(currentUser);
-            }
-            currentUser = {
-              fullName: item.fullName,
-              email: item.email,
-              fullClass: item.fullClass,
-              result_tc: item.result_tc,
-              scores: []
-            };
-          } else {
-            for (const key in item) {
-              if (Object.prototype.hasOwnProperty.call(item, key) && key !== 'id' && key !== 'result_tc') {
-                currentUser.scores.push({ name: key, score: item[key] });
+          for (const key in item) {
+            if (Object.prototype.hasOwnProperty.call(item, key) && key !== 'id' && key !== 'fullName' && key !== 'email' && key !== 'fullClass' && key !== 'password') {
+              if (key !== 'result_tc') {
+                scores.push({ name: key, score: item[key] });
               }
+              result_tc += item[key];
             }
           }
+  
+          return {
+            fullName: item.fullName,
+            email: item.email,
+            fullClass: item.fullClass,
+            result_tc: result_tc,
+            scores: scores
+          };
         });
   
-        // Utolsó felhasználó adatainak hozzáadása
-        if (currentUser.fullName) {
-          this.results.push(currentUser);
-        }
+        this.registrations = this.results.length;
       },
       (error) => {
         console.log('Hiba történt az adatok lekérése közben:', error);

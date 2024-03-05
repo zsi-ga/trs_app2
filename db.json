@@ -1,60 +1,21 @@
 {
   "users": [
     {
-      "id": "e26c",
+      "id": "7ffc",
       "fullName": "bing bang",
       "fullClass": "1A",
       "email": "bigbang@gmail.com",
-      "password": "123"
+      "password": "Bigbang123"
     },
     {
-      "id": "b574",
-      "result_tc": 3
+      "id": "38cf",
+      "result_tc": 17
     },
     {
-      "id": "822c",
+      "id": "64ee",
       "Matyi": 0,
-      "Kati": 48,
-      "Zsolt": 64
-    },
-    {
-      "id": "3b14",
-      "fullName": "Malacka",
-      "fullClass": "3B",
-      "email": "bigbangb@gmail.com",
-      "password": "123"
-    },
-    {
-      "id": "209d",
-      "result_tc": 14
-    },
-    {
-      "id": "f3bb",
-      "Gabi": 24,
-      "Béla": 56,
-      "Eszter": 72
-    },
-    {
-      "id": "bd5b",
-      "fullName": "Mikka Makka",
-      "fullClass": "2Szoft",
-      "email": "Mikka@gmail.com",
-      "password": "123"
-    },
-    {
-      "id": "cee5",
-      "result_tc": 12
-    },
-    {
-      "id": "714e",
-      "Jani": 16,
-      "Kati": 48,
-      "Eszter": 72,
-      "Andi": 40,
-      "Gabi": 24,
-      "Béla": 56,
       "Pisti": 8,
-      "Matyi": 0,
+      "Jani": 16,
       "Zoli": 32
     }
   ]

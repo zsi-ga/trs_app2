@@ -22,16 +22,6 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { FinishComponent } from './components/finish/finish.component';
 import { ResultComponent } from './components/result/result.component';
 
-
-
-
-
-
-
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,9 +33,6 @@ import { ResultComponent } from './components/result/result.component';
     LogoutComponent,
     FinishComponent,
     ResultComponent
-
- 
-
   ],
   imports: [
     BrowserModule,
@@ -59,15 +46,9 @@ import { ResultComponent } from './components/result/result.component';
     BrowserAnimationsModule,
     MessagesModule,
     RouterModule,
-    FormsModule,
-    
-    
-
-
-  
-    
+    FormsModule
   ],
-  providers: [MessageService, AuthService,],
+  providers: [MessageService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
