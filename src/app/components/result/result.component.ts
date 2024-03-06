@@ -10,7 +10,6 @@ export interface UserData {
   scores: { name: string, score: number }[];
 }
 
-
 @Component({
   selector: 'app-result',
   templateUrl: './result.component.html',
@@ -20,7 +19,6 @@ export class ResultComponent implements OnInit {
 
   registrations: number = 0;
   results: UserData[] = [];
-  resultTC: number[] = [];
   scoresData: { name: string, score: number }[] = [];
   results_tc: never[] | undefined;
 
@@ -40,7 +38,10 @@ export class ResultComponent implements OnInit {
         this.results = data.map(item => {
           const scores = [];
           let result_tc = 0;
-  
+          
+          if (item.hasOwnProperty('email')) {
+            result_tc++;
+          }
           for (const key in item) {
             if (Object.prototype.hasOwnProperty.call(item, key) && key !== 'id' && key !== 'fullName' && key !== 'email' && key !== 'fullClass' && key !== 'password') {
               if (key !== 'result_tc') {
@@ -59,7 +60,7 @@ export class ResultComponent implements OnInit {
           };
         });
   
-        this.registrations = this.results.length;
+        this.registrations = this.results.filter(item => item.email).length;
       },
       (error) => {
         console.log('Hiba történt az adatok lekérése közben:', error);
@@ -76,5 +77,6 @@ export class ResultComponent implements OnInit {
     return foundScore ? foundScore.score : '-';
   }
 }
+
 
 

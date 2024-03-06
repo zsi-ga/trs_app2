@@ -41,21 +41,24 @@ export class QuestionScComponent implements OnInit {
 
   updateSelectedScore() {
     if (this.selectedScore === 0) return;
-
+  
     const selectedInstructorLabel = this.instructorNames[this.selectedScore - 1];
-
+  
+   
     if (!(selectedInstructorLabel in this.instructorResults)) {
-      this.questions.forEach(question => {
-        question.score = this.selectedScore - 1;
-      });
-      this.calculateTotalScore();
-
       const selectedOption = this.options.find(option => option.label === selectedInstructorLabel);
       if (selectedOption) {
         selectedOption.disabled = true;
       }
+  
+      this.tempUser[selectedInstructorLabel] = this.selectedScore;
+     
     }
+
+    
   }
+
+  
 
   calculateTotalScore() {
     this.totalScore = this.questions.reduce((acc, curr) => acc + curr.score, 0);
@@ -78,14 +81,23 @@ export class QuestionScComponent implements OnInit {
 
   saveResultsAndLogout() {
     console.log('Eredmények mentése és kijelentkezés...');
-
+  
+   
+    const selectedInstructorLabel = this.instructorNames[this.selectedScore - 1];
+  
+    
+    if (!(selectedInstructorLabel in this.tempUser)) {
+      this.tempUser[selectedInstructorLabel] = this.totalScore;
+    }
+  
     
     this.authService.saveUserResults(this.tempUser).subscribe(() => {
       console.log('Eredmények sikeresen mentve és kijelentkezve.');
-
+  
+      
       this.authService.logOut();
       this.router.navigate(['/logout']);
     });
   }
+  
 }
-

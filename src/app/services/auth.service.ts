@@ -20,7 +20,7 @@ export class AuthService {
     return this.http.post(`${this.baseUrl}/users`, userDetails);
   }
 
-  getUserByEmail(email: string): Observable<User[]> {
+  getUserByEmail(_email: string): Observable<User[]> {
     return this.http.get<User[]>(`${this.baseUrl}/users`);
   }
   
@@ -28,7 +28,7 @@ export class AuthService {
     return this.http.post<User>(`${this.baseUrl}/users`, results);
   }
 
-  updateAllData(result_tc: User): Observable<User> {
+  updateAllData(): Observable<User> {
     return this.http.get<User>(`${this.baseUrl}/users`);
   }
 

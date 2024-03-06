@@ -7,8 +7,8 @@ import { authGuard } from './guards/auth.guard';
 import { QuestionTcComponent } from './components/question-tc/question-tc.component';
 import { QuestionScComponent } from './components/question-sc/question-sc.component';
 import { LogoutComponent } from './components/logout/logout.component';
-import { ResultComponent } from './components/result/result.component'; // Importáld a ResultComponentet
-import { FinishComponent } from './components/finish/finish.component'; // Importáld a FinishComponentet
+import { ResultComponent } from './components/result/result.component'; 
+import { FinishComponent } from './components/finish/finish.component'; 
 
 const routes: Routes = [
   {

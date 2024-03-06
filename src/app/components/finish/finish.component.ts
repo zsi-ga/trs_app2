@@ -1,3 +1,5 @@
+// finish.component.ts
+
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UserData } from '../result/result.component';
@@ -26,4 +28,10 @@ export class FinishComponent implements OnInit {
       }
     );
   }
+
+  getScoresByName(user: UserData, name: string): number | string {
+    const foundScore = user.scores.find(score => score.name === name);
+    return foundScore ? foundScore.score : '-';
+  }
 }
+

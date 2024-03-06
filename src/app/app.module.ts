@@ -21,6 +21,8 @@ import { AuthService } from './services/auth.service';
 import { LogoutComponent } from './components/logout/logout.component';
 import { FinishComponent } from './components/finish/finish.component';
 import { ResultComponent } from './components/result/result.component';
+import { DropdownModule } from 'primeng/dropdown';
+
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { ResultComponent } from './components/result/result.component';
     BrowserAnimationsModule,
     MessagesModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    DropdownModule 
+
   ],
   providers: [MessageService, AuthService],
   bootstrap: [AppComponent]

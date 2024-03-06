@@ -13,6 +13,14 @@ import { passwordMatchValidator } from 'src/app/shared/password-match.directive'
 })
 export class RegisterComponent {
 
+  classes = [
+    { id: '1A', name: '1A' },
+    { id: '2B', name: '2B' },
+    { id: '3C', name: '3C' }
+  ];
+
+  selectedClass: string | undefined;
+
   registerForm = this.fb.group({
     fullName: ['', [Validators.required, Validators.pattern(/^[a-zA-Z]+(?: [a-zA-Z]+)*$/)]],
     fullClass: ['', Validators.required],
@@ -51,6 +59,11 @@ export class RegisterComponent {
   }
 
   submitDetails() {
+    if (this.registerForm.invalid) {
+      this.messageService.add({ severity: 'error', summary: 'Hiba!', detail: 'Kérem, töltse ki az összes mezőt helyesen.' });
+      return;
+    }
+
     const postData = { ...this.registerForm.value };
     delete postData.confirmPassword;
     this.authService.registerUser(postData as User).subscribe(
@@ -65,4 +78,6 @@ export class RegisterComponent {
     );
   }
 }
+
+
 

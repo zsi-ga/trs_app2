@@ -1,22 +1,171 @@
 {
   "users": [
     {
-      "id": "7ffc",
-      "fullName": "bing bang",
-      "fullClass": "1A",
+      "id": "be33",
+      "fullName": "big bang",
+      "fullClass": {
+        "id": "1A",
+        "name": "1A"
+      },
       "email": "bigbang@gmail.com",
       "password": "Bigbang123"
     },
     {
-      "id": "38cf",
-      "result_tc": 17
+      "id": "57dd",
+      "result_tc": 12
     },
     {
-      "id": "64ee",
+      "id": "fa51",
       "Matyi": 0,
-      "Pisti": 8,
       "Jani": 16,
+      "Pisti": 8,
+      "Gabi": 24,
+      "Zoli": 32,
+      "Andi": 40,
+      "Kati": 48,
+      "Béla": 56,
+      "Zsolt": 64,
+      "Eszter": 72
+    },
+    {
+      "id": "257a",
+      "result_tc": 0
+    },
+    {
+      "id": "d841",
+      "Matyi": 0
+    },
+    {
+      "id": "8c8e",
+      "result_tc": 5
+    },
+    {
+      "id": "cec4",
+      "Matyi": 0,
+      "Pisti": 8
+    },
+    {
+      "id": "8060",
+      "result_tc": 4
+    },
+    {
+      "id": "3e1d",
+      "Matyi": 0,
+      "Jani": 16
+    },
+    {
+      "id": "5c15",
+      "Matyi": 0
+    },
+    {
+      "id": "aef3",
+      "result_tc": 16
+    },
+    {
+      "id": "b3b1",
+      "result_tc": 4
+    },
+    {
+      "id": "f011",
+      "Matyi": 0,
+      "Zsolt": 64
+    },
+    {
+      "id": "0d58",
+      "result_tc": 7
+    },
+    {
+      "id": "2c84",
+      "Matyi": 0
+    },
+    {
+      "id": "8b6f",
+      "result_tc": 3
+    },
+    {
+      "id": "de48",
+      "Matyi": 0
+    },
+    {
+      "id": "df86",
+      "result_tc": 11
+    },
+    {
+      "id": "609e",
+      "Pisti": 8
+    },
+    {
+      "id": "2d0c",
+      "result_tc": 5
+    },
+    {
+      "id": "c839",
+      "Pisti": 0,
+      "Jani": 8
+    },
+    {
+      "id": "f49d",
+      "result_tc": 4
+    },
+    {
+      "id": "1d75",
+      "Matyi": 0
+    },
+    {
+      "id": "9e73",
+      "result_tc": 4
+    },
+    {
+      "id": "4164",
+      "Matyi": 0,
+      "Jani": 16,
+      "Andi": 40
+    },
+    {
+      "id": "e0e9",
+      "Matyi": 0
+    },
+    {
+      "id": "4db4",
+      "Matyi": 0
+    },
+    {
+      "id": "5a9d",
       "Zoli": 32
+    },
+    {
+      "id": "15a4",
+      "Matyi": 15
+    },
+    {
+      "id": "603f",
+      "Matyi": 5,
+      "Pisti": 10,
+      "Jani": 15,
+      "Gabi": 17,
+      "Kati": 19
+    },
+    {
+      "id": "6768",
+      "Matyi": 3
+    },
+    {
+      "id": "40b3",
+      "Matyi": 12,
+      "Pisti": "2",
+      "Gabi": "4"
+    },
+    {
+      "id": "9f19",
+      "Matyi": 5,
+      "Pisti": "2",
+      "Jani": "3"
+    },
+    {
+      "id": "be65",
+      "Matyi": 5,
+      "Pisti": 5,
+      "Jani": 5
     }
   ]
 }
