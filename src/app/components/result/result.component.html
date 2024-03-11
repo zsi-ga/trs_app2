@@ -12,22 +12,16 @@
       </tr>
     </thead>
     <tbody>
-      <ng-container *ngFor="let result of results">
-        <tr>
-          <td>{{ result.fullName }}</td>
-          <td>{{ result.fullClass }}</td>
-          <td>{{ result.email }}</td>
-          <td>{{ result.result_tc }}</td> 
-          <td>
-            <ng-container *ngFor="let score of result.scores">
-              {{ score.name }}: {{ score.score }}<br>
-            </ng-container>
-          </td>
-        </tr>
-      </ng-container>
+      <tr *ngFor="let result of results">
+        <td>{{ result.fullName }}</td>
+        <td>{{ result.fullClass }}</td>
+        <td>{{ result.email }}</td>
+        <td>{{ result.result_tc }}</td>
+        <td>
+          <span *ngFor="let score of result.scores">
+            {{ score.name }}: {{ score.score }}<br>
+          </span>
+        </td>
+      </tr>
     </tbody>
   </table>
-</div>
-
-
-

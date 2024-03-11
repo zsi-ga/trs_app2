@@ -14,10 +14,33 @@ import { passwordMatchValidator } from 'src/app/shared/password-match.directive'
 export class RegisterComponent {
 
   classes = [
-    { id: '1A', name: '1A' },
-    { id: '2B', name: '2B' },
-    { id: '3C', name: '3C' }
-  ];
+    { 'name': 'SZOFT I/1/N' },
+    { 'name': 'SZOFT I/2/N' },
+    { 'name': 'SZOFT II/1/N' },
+    { 'name': 'SZOFT II/2/N' },
+    { 'name': 'SZOFT I/1/E' },
+    { 'name': 'SZOFT I/2/E' },
+    { 'name': 'SZOFT I/3/E' },
+    { 'name': 'SZOFT I/4/E' },
+    { 'name': 'SZOFT II/1/E' },
+    { 'name': 'SZOFT II/2/E' },
+    { 'name': 'VÜGY I/N' },
+    { 'name': 'LOG I/N' },
+    { 'name': 'KER I/N' },
+    { 'name': 'PSZU I/N' },
+    { 'name': 'LOG II/N' },
+    { 'name': 'TURSZ II/N' },
+    { 'name': 'KER II/N' },
+    { 'name': 'IVEZ I/E' },
+    { 'name': 'PSZU I/1/E' },
+    { 'name': 'PSZU I/2/E' },
+    { 'name': 'PSZU I/3/E' },
+    { 'name': 'VÜGY I/E' },
+    { 'name': 'KER I/E' },
+    { 'name': 'PSZU II/E' },
+    { 'name': 'VÜGY II/E' },
+    { 'name': 'LOG II/E' }
+]
 
   selectedClass: string | undefined;
 

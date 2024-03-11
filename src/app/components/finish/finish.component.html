@@ -1,28 +1,16 @@
-
-
-<div>
-  <button (click)="refreshData()" class="p-button p-button-secondary">Adatok frissítése</button>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Név</th>
-        <th>Email</th>
-        <th>Osztályok</th>
-        <th>Pontok (iskola)</th>
-        <th>Pontok (oktatók)</th>
-        <th>Minősítés</th>
-        
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let user of users">
-        <td>{{ user.fullName }}</td>
-        <td>{{ user.email }}</td>
-        <td>{{ user.fullClass }}</td>
-        <td>{{ user.result_tc }}</td>        
-        <td> <li *ngFor="let score of user.scores">{{ score.name }}: {{ score.score }}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<table>
+  <thead>
+    <tr>
+      <th>Osztály</th>
+      <th>Regisztrációk</th>
+      <th>Iskolapontok összesen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let summary of classSummaries">
+      <td>{{ summary.className }}</td>
+      <td>{{ summary.registrations }}</td>
+      <td>{{ summary.totalSchoolPoints }}</td>
+    </tr>
+  </tbody>
+</table>

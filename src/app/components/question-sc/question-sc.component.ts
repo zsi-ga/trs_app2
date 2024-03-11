@@ -20,7 +20,19 @@ export class QuestionScComponent implements OnInit {
     { text: 'Az oktatás/tanulás során felmerülő problémákat az oktatóval közösen meg tudjuk oldani.', score: 0 },
   ];
 
-  instructorNames: string[] = ['Matyi', 'Pisti', 'Jani', 'Gabi', 'Zoli', 'Andi', 'Kati', 'Béla', 'Zsolt', 'Eszter'];
+  instructorNames: string[] = [
+    'Bakos András', 'Bálint Dezső', 'Bedő Gertrúd', 'Bódai Károly', 'Czibolyáné Nagy Anna',
+    'Csomár Tünde', 'dr. Orosz Róza', 'Drávay Kinga', 'Eszterhai Judit', 'Feráné Gősi Ildikó',
+    'Fischer-Deeks, Ben', 'Fügedi Beatrix', 'Füzeséri Mihály', 'García de Quirós, Susana',
+    'Hanzliné Farkas Valéria', 'Hoffmann Vilmos', 'Horváth Boglárka', 'Illés Marianna',
+    'Jáger Attila', 'Józsa Béla', 'Kabar Judit', 'Kállai Zsuzsanna', 'Kasnyik Marianna',
+    'Kelemen Károly', 'Kocsis Zsuzsanna', 'Koós-Harmat Zsuzsanna', 'Kopp Kristóf',
+    'Kovács Bence', 'Krain (Havas) Edina', 'Kupovits Andrea', 'Mály Balázs', 'Mészáros Sándor',
+    'Némon Zoltán', 'Onódi Ákos', 'Őze-Ottohál Zsuzsa', 'Polyák Anita', 'Rádics András',
+    'Rékási József', 'Rocca, Enrica', 'Sallai András', 'Sarkadi Sándor', 'Szatmáry Judit',
+    'Szendéné Koltai Ágnes', 'Szommer Ágnes', 'Togyerisko Erika', 'Togyerisko Erika',
+    'Vadász László', 'Vándorffy István', 'Veréb Zsolt', 'Vida Ágnes', 'Vinkler Judit', 'Volák Mária'
+];
 
   options = this.instructorNames.map((name, index) => {
     return { label: name, value: index + 1, disabled: false };

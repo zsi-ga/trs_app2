@@ -38,23 +38,26 @@ export class ResultComponent implements OnInit {
         this.results = data.map(item => {
           const scores = [];
           let result_tc = 0;
-          
-          if (item.hasOwnProperty('email')) {
-            result_tc++;
+  
+          if (item.hasOwnProperty('result_tc')) {
+            result_tc = item.result_tc;
           }
+  
           for (const key in item) {
-            if (Object.prototype.hasOwnProperty.call(item, key) && key !== 'id' && key !== 'fullName' && key !== 'email' && key !== 'fullClass' && key !== 'password') {
-              if (key !== 'result_tc') {
-                scores.push({ name: key, score: item[key] });
-              }
-              result_tc += item[key];
+            if (Object.prototype.hasOwnProperty.call(item, key) && key !== 'id' && key !== 'fullName' && key !== 'email' && key !== 'fullClass' && key !== 'password' && key !== 'result_tc') {
+              scores.push({ name: key, score: item[key] });
             }
+          }
+  
+          let fullClass = '';
+          if (item.fullClass && item.fullClass.name) {
+            fullClass = item.fullClass.name;
           }
   
           return {
             fullName: item.fullName,
             email: item.email,
-            fullClass: item.fullClass,
+            fullClass: fullClass,
             result_tc: result_tc,
             scores: scores
           };
