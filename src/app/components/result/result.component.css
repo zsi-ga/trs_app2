@@ -1,0 +1,20 @@
+.container {
+    width: 80%;
+    margin: auto;
+  }
+  
+  .adatok {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .adatok h2 {
+    margin-bottom: 10px;
+  }
+  
+  .adatok p {
+    margin: 5px 0;
+  }
+  

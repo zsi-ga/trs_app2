@@ -6,7 +6,7 @@ export interface UserData {
   fullName: string;
   email: string;
   fullClass: string;
-  result_tc: number;
+  result_tc: number | null;
   scores: { name: string, score: number }[];
 }
 
@@ -37,15 +37,21 @@ export class ResultComponent implements OnInit {
       (data: any[]) => {
         this.results = data.map(item => {
           const scores = [];
-          let result_tc = 0;
+          let result_tc: number | null = null;
   
           if (item.hasOwnProperty('result_tc')) {
-            result_tc = item.result_tc;
+            const rawResultTc = item.result_tc;
+            if (rawResultTc !== 0) {
+              result_tc = rawResultTc;
+            }
           }
   
           for (const key in item) {
             if (Object.prototype.hasOwnProperty.call(item, key) && key !== 'id' && key !== 'fullName' && key !== 'email' && key !== 'fullClass' && key !== 'password' && key !== 'result_tc') {
-              scores.push({ name: key, score: item[key] });
+              const score = item[key];
+              if (key !== 'result_tc' && score !== 0) {
+                scores.push({ name: key, score: score });
+              }
             }
           }
   
@@ -70,6 +76,8 @@ export class ResultComponent implements OnInit {
       }
     );
   }
+  
+  
   
   onRefreshClick() {
     this.refreshData();

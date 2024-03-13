@@ -1,16 +1,9 @@
+<h3>Regisztrációk összesítve osztályonként</h3>
 <table>
-  <thead>
-    <tr>
-      <th>Osztály</th>
-      <th>Regisztrációk</th>
-      <th>Iskolapontok összesen</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let summary of classSummaries">
-      <td>{{ summary.className }}</td>
-      <td>{{ summary.registrations }}</td>
-      <td>{{ summary.totalSchoolPoints }}</td>
-    </tr>
-  </tbody>
+  <tr *ngFor="let group of classGroups">
+    <td>{{ group.class }}</td>
+    <td>Regisztrációk száma: {{ group.registrations }}</td>
+    <td>Összesített iskolapont: {{ group.totalSchoolPoints }}</td>
+    <td>Minősítés: {{ group.classification }}</td><
+  </tr>
 </table>

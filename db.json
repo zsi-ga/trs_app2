@@ -1,5 +1,110 @@
 {
   "users": [
-    
+    {
+      "id": "da5a",
+      "fullName": "bigbang",
+      "fullClass": {
+        "name": "SZOFT I/1/N"
+      },
+      "email": "bigbang@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "a82d",
+      "result_tc": 14
+    },
+    {
+      "id": "60ab",
+      "Bálint Dezső": 10,
+      "Bódai Károly": 17,
+      "Füzeséri Mihály": 17,
+      "Hanzliné Farkas Valéria": 17,
+      "Fischer-Deeks, Ben": 17
+    },
+    {
+      "id": "5352",
+      "fullName": "bigo",
+      "fullClass": {
+        "name": "SZOFT II/1/N"
+      },
+      "email": "bigbangg@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "0112",
+      "result_tc": 15
+    },
+    {
+      "id": "c6df",
+      "Bódai Károly": 4,
+      "García de Quirós, Susana": 12,
+      "Horváth Boglárka": 23
+    },
+    {
+      "id": "aa32",
+      "fullName": "bigo",
+      "fullClass": {
+        "name": "KER I/N"
+      },
+      "email": "bigo@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "e3b5",
+      "result_tc": 17
+    },
+    {
+      "id": "4924",
+      "Hoffmann Vilmos": 14,
+      "Illés Marianna": 24,
+      "Horváth Boglárka": 27,
+      "García de Quirós, Susana": 29
+    },
+    {
+      "id": "af4a",
+      "fullName": "test",
+      "fullClass": {
+        "name": "SZOFT I/1/N"
+      },
+      "email": "test@freemail.hu",
+      "password": "123"
+    },
+    {
+      "id": "fc64",
+      "result_tc": 16
+    },
+    {
+      "id": "06b4",
+      "Csomár Tünde": 8,
+      "Illés Marianna": 11,
+      "Hanzliné Farkas Valéria": 16,
+      "Bedő Gertrúd": 27
+    },
+    {
+      "id": "eb3b",
+      "result_tc": 0
+    },
+    {
+      "id": "4757",
+      "dr. Orosz Róza": 8
+    },
+    {
+      "id": "ebdb",
+      "fullName": "bigo",
+      "fullClass": {
+        "name": "SZOFT I/2/N"
+      },
+      "email": "bigo@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "99fb",
+      "fullName": "test",
+      "fullClass": {
+        "name": "SZOFT II/1/N"
+      },
+      "email": "test@freemail.hu",
+      "password": "12345"
+    }
   ]
 }
