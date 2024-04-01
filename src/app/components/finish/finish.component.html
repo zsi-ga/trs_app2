@@ -1,9 +1,30 @@
-<h3>Regisztrációk összesítve osztályonként</h3>
 <table>
-  <tr *ngFor="let group of classGroups">
-    <td>{{ group.class }}</td>
-    <td>Regisztrációk száma: {{ group.registrations }}</td>
-    <td>Összesített iskolapont: {{ group.totalSchoolPoints }}</td>
-    <td>Minősítés: {{ group.classification }}</td><
-  </tr>
+  <thead>
+    <tr>
+      <th>Osztály</th>
+      <th>Regisztrációk</th>
+      <th>Iskola pont</th>
+      <th>Iskola minősítése</th>
+      <th>Oktatók és pontjaik</th>
+      <th>Minősítése</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let classGroup of classGroups">
+      <td>{{ classGroup.class }}</td>
+      <td>{{ classGroup.registrations }}</td>
+      <td>{{ classGroup.totalSchoolPoints }}</td>
+      <td>{{ classGroup.classification }}</td>
+      <td>
+        <ul>
+          <li *ngFor="let student of classGroup.studentData">
+            <span *ngFor="let teacher of student.teacherResults">
+              {{ teacher.teacherName }}: {{ teacher.teacherPoints }}
+            </span>
+          </li>
+        </ul>
+      </td>
+      <td>{{ classGroup.classification }}</td>
+    </tr>
+  </tbody>
 </table>
