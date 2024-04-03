@@ -53,6 +53,61 @@
       "id": "8259",
       "Bálint Dezső": 8,
       "Bódai Károly": 13
+    },
+    {
+      "id": "266d",
+      "fullName": "bigo bag",
+      "fullClass": {
+        "name": "SZOFT I/2/N"
+      },
+      "email": "bigo@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "1e4b",
+      "result_tc": 48
+    },
+    {
+      "id": "faae",
+      "Csomár Tünde": 8,
+      "García de Quirós, Susana": 16,
+      "Czibolyáné Nagy Anna": 23
+    },
+    {
+      "id": "5da4",
+      "fullName": "Test Tester",
+      "fullClass": {
+        "name": "VÜGY II/E"
+      },
+      "email": "test@freemail.hu",
+      "password": "123"
+    },
+    {
+      "id": "71b7",
+      "result_tc": 8
+    },
+    {
+      "id": "b902",
+      "Csomár Tünde": 4,
+      "Hanzliné Farkas Valéria": 8
+    },
+    {
+      "id": "390f",
+      "fullName": "tttt",
+      "fullClass": {
+        "name": "VÜGY II/E"
+      },
+      "email": "ttt@freemail.hu",
+      "password": "123"
+    },
+    {
+      "id": "3662",
+      "result_tc": 21
+    },
+    {
+      "id": "e94b",
+      "Czibolyáné Nagy Anna": 13,
+      "Horváth Boglárka": 18
     }
   ]
 }

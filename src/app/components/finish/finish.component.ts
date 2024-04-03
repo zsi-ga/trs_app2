@@ -1,11 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+interface TeacherResult {
+  teacherName: string;
+  teacherPoints: number;
+  classification?: string;
+}
+
 interface UserData {
   fullName: string;
   email: string;
   totalSchoolPoints: number;
-  teacherResults: { teacherName: string; teacherPoints: number }[];
+  teacherResults: TeacherResult[];
 }
 
 interface ClassGroup {
@@ -35,41 +41,70 @@ export class FinishComponent implements OnInit {
     this.http.get<any[]>('http://localhost:3000/users').subscribe(
       (data: any[]) => {
         const classMap: { [className: string]: ClassGroup } = {};
+        let currentClassGroup: ClassGroup | null = null;
 
         data.forEach(item => {
-          const totalSchoolPoints: number = item.totalSchoolPoints;
-          const userData: UserData = {
-            fullName: item.fullName,
-            email: item.email,
-            totalSchoolPoints: totalSchoolPoints,
-            teacherResults: item.teacherResults
-          };
+          if (item.email) {
+            const className = item.fullClass ? item.fullClass.name : null;
+            if (!className) {
+              return; 
+            }
 
-          if (!classMap[item.class]) {
-            classMap[item.class] = {
-              class: item.class,
-              registrations: 0,
-              totalSchoolPoints: 0,
-              averageSchoolPoints: 0,
-              classification: '',
-              studentData: []
-            };
+            if (!classMap[className]) {
+              classMap[className] = {
+                class: className,
+                registrations: 1,
+                totalSchoolPoints: item.result_tc || 0,
+                averageSchoolPoints: 0,
+                classification: '',
+                studentData: [{
+                  fullName: item.fullName,
+                  email: item.email,
+                  totalSchoolPoints: item.result_tc || 0,
+                  teacherResults: []
+                }]
+              };
+            } else {
+              classMap[className].registrations++;
+              classMap[className].studentData.push({
+                fullName: item.fullName,
+                email: item.email,
+                totalSchoolPoints: item.result_tc || 0,
+                teacherResults: []
+              });
+              classMap[className].totalSchoolPoints += item.result_tc || 0;
+            }
+
+            currentClassGroup = classMap[className];
+          } else if (currentClassGroup) {
+            const lastStudent = currentClassGroup.studentData[currentClassGroup.studentData.length - 1];
+            for (const key in item) {
+              if (!['id', 'email', 'fullName', 'fullClass', 'password'].includes(key)) {
+                if (key === 'result_tc') {
+                  lastStudent.totalSchoolPoints += item[key];
+                  currentClassGroup.totalSchoolPoints += item[key];
+                } else {
+                  lastStudent.teacherResults.push({
+                    teacherName: key,
+                    teacherPoints: item[key]
+                  });
+                }
+              }
+            }
           }
-
-          classMap[item.class].registrations++;
-          classMap[item.class].totalSchoolPoints += totalSchoolPoints;
-          classMap[item.class].studentData.push(userData);
         });
 
         Object.values(classMap).forEach(classGroup => {
-          classGroup.averageSchoolPoints = classGroup.totalSchoolPoints / classGroup.registrations;
-          classGroup.classification = this.getClassification(classGroup.averageSchoolPoints);
+          if (classGroup.registrations > 0) {
+            classGroup.averageSchoolPoints = classGroup.totalSchoolPoints / classGroup.registrations;
+            classGroup.classification = this.getClassification(classGroup.averageSchoolPoints);
+          }
         });
 
         this.classGroups = Object.values(classMap);
       },
       (error) => {
-        console.log('Error occurred while fetching data:', error);
+        console.error('Error occurred while fetching data:', error);
       }
     );
   }
@@ -88,5 +123,3 @@ export class FinishComponent implements OnInit {
     }
   }
 }
-
-
