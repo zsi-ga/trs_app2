@@ -1,8 +1,12 @@
 <div>
-  <p>Regisztrációk: {{ registrations }}</p>
+
+  <button (click)="navigateToFinish()"class="p-button p-button-secondary">Navigálás az összegzéshez</button>
+  <p></p>
   <button (click)="refreshData()" class="p-button p-button-secondary">Adatok frissítése</button>
+  <p>Regisztrációk: {{ registrations }}</p>
   <table>
     <thead>
+      <p></p>
       <tr>
         <th>Teljes Név</th>
         <th>Osztály</th>

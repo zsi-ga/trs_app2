@@ -1,5 +1,5 @@
 
-.questions-container {
+.question-tc-container {
     display: flex;
     flex-direction: column;
   }

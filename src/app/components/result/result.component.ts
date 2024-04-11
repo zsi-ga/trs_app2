@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 export interface UserData {
@@ -16,6 +16,9 @@ export interface UserData {
   styleUrls: ['./result.component.css']
 })
 export class ResultComponent implements OnInit {
+navigateToFinish() {
+throw new Error('Method not implemented.');
+}
 
   registrations: number = 0;
   results: UserData[] = [];

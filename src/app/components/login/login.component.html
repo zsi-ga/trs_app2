@@ -1,47 +1,48 @@
 <div class="login-container">
-<form [formGroup]="loginForm" (ngSubmit)="loginUser()">
-  <p-card header="Bejelentkezés" [style]="{ width: '360px' }">
-    <div class="field">
-      <label for="email">Email</label>
-      <input
-        type="text"
-        pInputText
-        formControlName="email"
-        class="w-full"
-        name="email"
-        placeholder="Irja be a @ktch.hu emailt!"
-      />
-      <small
-        *ngIf="email.invalid && (email.dirty || email.touched)"
-        class="block p-error"
-      >
-        <div *ngIf="email.errors?.['required']">Email szükséges.</div>
-        <div *ngIf="email.errors?.['email']">Email érvényes kell legyen.</div>
-      </small>
-    </div>
-    <div class="field">
-      <label for="password">Jelszó</label>
-      <input
-        type="password"
-        pInputText
-        formControlName="password"
-        class="w-full"
-        name="password"
-        placeholder="Irja be a jelszót!"
-      />
-      <small
-        *ngIf="password.invalid && (password.dirty || password.touched)"
-        class="block p-error"
-      >
-        <div *ngIf="password.errors?.['required']">Jelszó érvényes kell legyen.</div>
-      </small>
-    </div>
-    <p-button
-      label="BEJELENTKEZÉS"
-      styleClass="w-full"
-      [disabled]="loginForm.invalid"
-      type="submit"
-    ></p-button>
-    <div class="mt-2">Bejelentkezéshez előbb regisztráljon! <a routerLink="/register">Regisztrálás</a></div>
-  </p-card>
-</form>
+  <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+    <p-card header="Bejelentkezés" [style]="{ width: '360px' }">
+      <div class="field">
+        <label for="email">Email</label>
+        <input
+          type="text"
+          pInputText
+          formControlName="email"
+          class="w-full"
+          id="email"
+          placeholder="Irja be az email címét!"
+        />
+        <small
+          *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)"
+          class="block p-error"
+        >
+          <div *ngIf="loginForm.get('email')?.errors?.['required']">Email szükséges.</div>
+          <div *ngIf="loginForm.get('email')?.errors?.['email']">Email érvényes kell legyen.</div>
+        </small>
+      </div>
+      <div class="field">
+        <label for="password">Jelszó</label>
+        <input
+          type="password"
+          pInputText
+          formControlName="password"
+          class="w-full"
+          id="password"
+          placeholder="Irja be a jelszót!"
+        />
+        <small
+          *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)"
+          class="block p-error"
+        >
+          <div *ngIf="loginForm.get('password')?.errors?.['required']">Jelszó érvényes kell legyen.</div>
+        </small>
+      </div>
+      <p-button
+        label="BEJELENTKEZÉS"
+        styleClass="w-full"
+        [disabled]="loginForm.invalid"
+        type="submit"
+      ></p-button>
+      <div class="mt-2">Bejelentkezéshez előbb regisztráljon! <a routerLink="/register">Regisztrálás</a></div>
+    </p-card>
+  </form>
+</div>

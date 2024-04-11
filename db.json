@@ -1,6 +1,12 @@
 {
   "users": [
     {
+      "id": 1,
+      "email": "admin@ktch.hu",
+      "password": "admin",
+      "role": "admin"
+    },
+    {
       "id": "4bdd",
       "fullName": "bigbang",
       "fullClass": {
@@ -56,94 +62,33 @@
       "Horváth Boglárka": 22
     },
     {
-      "id": "b5ff",
-      "fullName": "Test Tester",
-      "fullClass": {
-        "name": "SZOFT I/2/N"
-      },
-      "email": "bigo@gmail.com",
-      "password": "123"
+      "id": "3e9e",
+      "Bedő Gertrúd": 0
     },
     {
-      "id": "f592",
-      "result_tc": 10
+      "id": "be1d",
+      "result_tc": 0
     },
     {
-      "id": "1584",
-      "Bódai Károly": 10,
-      "Feráné Gősi Ildikó": 15,
-      "García de Quirós, Susana": 20,
-      "Horváth Boglárka": 25,
-      "Drávay Kinga": 30
+      "id": "c427",
+      "undefined": 0
     },
     {
-      "id": "945b",
-      "fullName": "big bang",
-      "fullClass": {
-        "name": "SZOFT I/1/N"
-      },
-      "email": "admin@example.com",
-      "password": "123"
+      "id": "2770",
+      "result_tc": 20
     },
     {
-      "id": "a606",
-      "result_tc": 21
+      "id": "d0f9",
+      "Bakos András": "1",
+      "Bálint Dezső": 17
     },
     {
-      "id": "b3b0",
-      "Bedő Gertrúd": 8,
-      "García de Quirós, Susana": 16,
-      "Bakos András": 21
+      "id": "b5a6",
+      "result_tc": 0
     },
     {
-      "id": "4a9b",
-      "fullName": "teter",
-      "fullClass": {
-        "name": "KER I/E"
-      },
-      "email": "teter@ktch.hu",
-      "password": "123"
-    },
-    {
-      "id": "2e29",
-      "result_tc": 50
-    },
-    {
-      "id": "708a",
-      "Feráné Gősi Ildikó": 23,
-      "Füzeséri Mihály": 22,
-      "Bakos András": 20,
-      "Hanzliné Farkas Valéria": 18,
-      "Illés Marianna": 16
-    },
-    {
-      "id": "dbd9",
-      "fullName": "titi",
-      "fullClass": {
-        "name": "SZOFT I/1/N"
-      },
-      "email": "titi@ktch.hu",
-      "password": "123"
-    },
-    {
-      "id": "b8c6",
-      "result_tc": 30
-    },
-    {
-      "id": "8be3",
-      "Bakos András": 13,
-      "Hanzliné Farkas Valéria": 17,
-      "Illés Marianna": 26,
-      "Drávay Kinga": 25
-    },
-    {
-      "id": "78a8",
-      "result_tc": 10
-    },
-    {
-      "id": "0c52",
-      "Eszterhai Judit": 8,
-      "Fügedi Beatrix": 16
+      "id": "6125",
+      "undefined": 0
     }
   ]
 }

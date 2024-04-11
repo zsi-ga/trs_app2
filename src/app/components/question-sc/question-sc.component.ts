@@ -68,10 +68,7 @@ export class QuestionScComponent implements OnInit {
      
     }
 
-    
   }
-
-  
 
   calculateTotalScore() {
     this.totalScore = this.questions.reduce((acc, curr) => acc + curr.score, 0);
@@ -106,7 +103,6 @@ export class QuestionScComponent implements OnInit {
     
     this.authService.saveUserResults(this.tempUser).subscribe(() => {
       console.log('Eredmények sikeresen mentve és kijelentkezve.');
-  
       
       this.authService.logOut();
       this.router.navigate(['/logout']);

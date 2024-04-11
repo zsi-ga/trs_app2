@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';  // Importáljuk a Router-t
 
 interface TeacherResult {
   teacherName: string;
@@ -30,8 +31,9 @@ interface ClassGroup {
 })
 export class FinishComponent implements OnInit {
   classGroups: ClassGroup[] = [];
+button: any;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}  // Injektáljuk a Router-t
 
   ngOnInit() {
     this.refreshData();
@@ -39,17 +41,18 @@ export class FinishComponent implements OnInit {
 
   refreshData() {
     this.http.get<any[]>('http://localhost:3000/users').subscribe(
-      (data: any[]) => {
+      data => {
         const classMap: { [className: string]: ClassGroup } = {};
         let currentClassGroup: ClassGroup | null = null;
-
+  
         data.forEach(item => {
           if (item.email) {
-            const className = item.fullClass ? item.fullClass.name : null;
+            // Feltételezzük, hogy ha fullClass egy objektum, akkor van 'name' tulajdonsága
+            const className = item.fullClass && typeof item.fullClass === 'object' ? item.fullClass.name : item.fullClass;
             if (!className) {
-              return; 
+              return;
             }
-
+  
             if (!classMap[className]) {
               classMap[className] = {
                 class: className,
@@ -74,7 +77,7 @@ export class FinishComponent implements OnInit {
               });
               classMap[className].totalSchoolPoints += item.result_tc || 0;
             }
-
+  
             currentClassGroup = classMap[className];
           } else if (currentClassGroup) {
             const lastStudent = currentClassGroup.studentData[currentClassGroup.studentData.length - 1];
@@ -93,21 +96,22 @@ export class FinishComponent implements OnInit {
             }
           }
         });
-
+  
         Object.values(classMap).forEach(classGroup => {
           if (classGroup.registrations > 0) {
             classGroup.averageSchoolPoints = classGroup.totalSchoolPoints / classGroup.registrations;
             classGroup.classification = this.getClassification(classGroup.averageSchoolPoints);
           }
         });
-
+  
         this.classGroups = Object.values(classMap);
       },
-      (error) => {
+      error => {
         console.error('Error occurred while fetching data:', error);
       }
     );
   }
+  
 
   getClassification(totalSchoolPoints: number): string {
     if (totalSchoolPoints >= 0 && totalSchoolPoints <= 10) {
@@ -122,4 +126,11 @@ export class FinishComponent implements OnInit {
       return 'Kiváló';
     }
   }
+
+  logOut() {
+    sessionStorage.clear();
+    this.router.navigate(['login']);
+  }
+    
+   
 }

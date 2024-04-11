@@ -23,11 +23,11 @@ export class LoginComponent {
   ) { }
 
   get email() {
-    return this.loginForm.controls['email'];
+    return this.loginForm.get('email');
   }
 
   get password() { 
-    return this.loginForm.controls['password']; 
+    return this.loginForm.get('password'); 
   }
 
   loginUser() {
@@ -35,21 +35,25 @@ export class LoginComponent {
       this.msgService.add({ severity: 'error', summary: 'Hiba!', detail: 'Kérem, töltse ki az összes mezőt helyesen.' });
       return;
     }
-
-    const { email, password } = this.loginForm.value;
-    this.authService.getUserByEmail(email as string).subscribe(
-      (      response: string | any[]) => {
-        if (response.length > 0 && response[0].password === password) {
-          sessionStorage.setItem('email', email as string);
+  
+    const email = this.loginForm.value.email ?? '';
+    const password = this.loginForm.value.password ?? '';
+  
+    this.authService.login(email, password).subscribe(
+      user => {
+        if (user) {
+          sessionStorage.setItem('email', email);
           this.msgService.add({ severity: 'success', summary: 'Sikeres bejelentkezés', detail: 'Üdvözöljük!' });
           this.router.navigate(['/home']);
         } else {
           this.msgService.add({ severity: 'error', summary: 'Hiba!', detail: 'Hibás email cím vagy jelszó.' });
         }
       },
-      () => {
+      error => {
         this.msgService.add({ severity: 'error', summary: 'Hiba!', detail: 'Valami nem jó' });
+        console.error('Login error:', error);
       }
-    )
+    );
   }
+  
 }
