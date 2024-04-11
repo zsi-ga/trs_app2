@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';  // Importáljuk a Router-t
+import { Router } from '@angular/router';  
 
 interface TeacherResult {
   teacherName: string;
@@ -33,7 +33,7 @@ export class FinishComponent implements OnInit {
   classGroups: ClassGroup[] = [];
 button: any;
 
-  constructor(private http: HttpClient, private router: Router) {}  // Injektáljuk a Router-t
+  constructor(private http: HttpClient, private router: Router) {}  
 
   ngOnInit() {
     this.refreshData();
@@ -47,7 +47,7 @@ button: any;
   
         data.forEach(item => {
           if (item.email) {
-            // Feltételezzük, hogy ha fullClass egy objektum, akkor van 'name' tulajdonsága
+           
             const className = item.fullClass && typeof item.fullClass === 'object' ? item.fullClass.name : item.fullClass;
             if (!className) {
               return;
