@@ -78,7 +78,6 @@ export class ResultComponent implements OnInit {
   }
   
   
-  
   onRefreshClick() {
     this.refreshData();
   }

@@ -26,19 +26,19 @@ const routes: Routes = [
   },
   {
     path: 'question-tc', 
-    component: QuestionTcComponent
+    component: QuestionTcComponent,
   },
   {
     path: 'question-sc', 
-    component: QuestionScComponent
+    component: QuestionScComponent,
   },
   {
     path: 'logout', 
-    component: LogoutComponent
+    component: LogoutComponent,
   },
   {
     path: 'result', 
-    component: ResultComponent
+    component: ResultComponent,
   },
   {
     path: 'finish', 

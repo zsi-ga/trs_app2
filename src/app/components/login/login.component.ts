@@ -38,7 +38,7 @@ export class LoginComponent {
 
     const { email, password } = this.loginForm.value;
     this.authService.getUserByEmail(email as string).subscribe(
-      response => {
+      (      response: string | any[]) => {
         if (response.length > 0 && response[0].password === password) {
           sessionStorage.setItem('email', email as string);
           this.msgService.add({ severity: 'success', summary: 'Sikeres bejelentkezés', detail: 'Üdvözöljük!' });
@@ -47,11 +47,9 @@ export class LoginComponent {
           this.msgService.add({ severity: 'error', summary: 'Hiba!', detail: 'Hibás email cím vagy jelszó.' });
         }
       },
-      error => {
+      () => {
         this.msgService.add({ severity: 'error', summary: 'Hiba!', detail: 'Valami nem jó' });
       }
     )
   }
 }
-
-

@@ -101,6 +101,3 @@ export class RegisterComponent {
     );
   }
 }
-
-
-

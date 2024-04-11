@@ -8,6 +8,12 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
+  getUserRole() {
+    throw new Error('Method not implemented.');
+  }
+  isLoggedIn() {
+    throw new Error('Method not implemented.');
+  }
   private baseUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient, private router: Router) { }

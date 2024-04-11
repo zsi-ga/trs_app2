@@ -1,4 +1,6 @@
-export interface User {
+export interface User
+ {
+    role: string;
     
     length: number;
     id: number;

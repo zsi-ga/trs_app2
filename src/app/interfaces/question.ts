@@ -1,5 +1,6 @@
 
-export interface Question {
+export interface Question
+ {
     text: string;
     score: number;
   }

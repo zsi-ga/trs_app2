@@ -1,11 +1,13 @@
 export interface UserData {
-instructorsAndPoints: any;
-schoolPoints: any;
-    fullName: string;
-    email: string;
-    fullClass: string;
+
+  id?: string; 
+  fullName: string;
+  email: string;
+  fullClass: string;
+  result_tc: number;
+  results?: { 
     result_tc: number | null;
-    scores: { name: string, score: number }[];
-  }
-  
-  
+    result_sc: number | null;
+  };
+  scores: number[]; 
+}

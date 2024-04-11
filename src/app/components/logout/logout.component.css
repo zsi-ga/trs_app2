@@ -4,11 +4,12 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
+    background-color: #678998;
   }
   
   .logout-button {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #0ca4eb;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -18,5 +19,14 @@
   
   .logout-button:hover {
     background-color: #0056b3;
+  }
+  .login-container {
+    background-image: url('/assets/login.jpg'); 
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
   }
   
