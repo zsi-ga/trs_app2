@@ -1,14 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { UserData2 } from 'src/app/interfaces/userdata2';
 
-export interface UserData {
-  fullName: string;
-  email: string;
-  fullClass: string;
-  result_tc: number | null;
-  scores: { name: string, score: number }[];
-}
+
+
 
 @Component({
   selector: 'app-result',
@@ -16,16 +12,12 @@ export interface UserData {
   styleUrls: ['./result.component.css']
 })
 export class ResultComponent implements OnInit {
-navigateToFinish() {
-throw new Error('Method not implemented.');
-}
-
   registrations: number = 0;
-  results: UserData[] = [];
+  results: UserData2[] = [];
   scoresData: { name: string, score: number }[] = [];
   results_tc: never[] | undefined;
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) {}
+  constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router) {}
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
@@ -41,14 +33,14 @@ throw new Error('Method not implemented.');
         this.results = data.map(item => {
           const scores = [];
           let result_tc: number | null = null;
-  
+
           if (item.hasOwnProperty('result_tc')) {
             const rawResultTc = item.result_tc;
             if (rawResultTc !== 0) {
               result_tc = rawResultTc;
             }
           }
-  
+
           for (const key in item) {
             if (Object.prototype.hasOwnProperty.call(item, key) && key !== 'id' && key !== 'fullName' && key !== 'email' && key !== 'fullClass' && key !== 'password' && key !== 'result_tc') {
               const score = item[key];
@@ -57,12 +49,12 @@ throw new Error('Method not implemented.');
               }
             }
           }
-  
+
           let fullClass = '';
           if (item.fullClass && item.fullClass.name) {
             fullClass = item.fullClass.name;
           }
-  
+
           return {
             fullName: item.fullName,
             email: item.email,
@@ -71,7 +63,7 @@ throw new Error('Method not implemented.');
             scores: scores
           };
         });
-  
+
         this.registrations = this.results.filter(item => item.email).length;
       },
       (error) => {
@@ -80,16 +72,13 @@ throw new Error('Method not implemented.');
     );
   }
   
-  
   onRefreshClick() {
     this.refreshData();
   }
 
-  getScoreFromScores(scores: { name: string, score: number }[], name: string): number | string {
-    const foundScore = scores.find(score => score.name === name);
-    return foundScore ? foundScore.score : '-';
+  navigateToHome() {
+    this.router.navigate(['/']); 
   }
 }
-
 
 

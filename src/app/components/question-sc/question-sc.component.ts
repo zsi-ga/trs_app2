@@ -10,6 +10,9 @@ import { Question } from 'src/app/interfaces/question';
   styleUrls: ['./question-sc.component.css']
 })
 export class QuestionScComponent implements OnInit {
+logOut() {
+throw new Error('Method not implemented.');
+}
   questions: Question[] = [
     { text: 'Az oktató mindig pontosan kezdi és fejezi be a tanórát.', score: 0 },
     { text: 'Véleményem szerint a rendelkezésre álló időt megfelelően kihasználjuk, mert az oktató mindig hasznos és érdekes órákat tart.', score: 0 },
@@ -104,7 +107,7 @@ export class QuestionScComponent implements OnInit {
     this.authService.saveUserResults(this.tempUser).subscribe(() => {
       console.log('Eredmények sikeresen mentve és kijelentkezve.');
       
-      this.authService.logOut();
+     
       this.router.navigate(['/logout']);
     });
   }

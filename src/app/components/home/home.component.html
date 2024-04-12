@@ -6,7 +6,7 @@
     <h4>Útmutató:</h4>
     <ol>
         <li>Az állítások két csoportra vannak osztva 1. iskola minősítése, 2. tanárok minősítése</li>
-        <li>Az iskola értékelését egyszer, de a tanárok minősítését az oktató személyenként kell elvégezni</li>
+        <li>Az iskola értékelését egyszer, de a tanárok minősítését oktatónként kell elvégezni</li>
         <li>Egy személyt csak egyszer lehet értékelni </li>
         <li>A feltevéseket 1-5 ig lehet pontozni, több pont jobb értékelésnek számít </li>
         <li>Az értékelések végén szükséges menteni</li>
@@ -19,7 +19,9 @@
         </div>
     </div>
 </div>
-<p-button *ngIf="isAdmin" (click)="navigateToFinish()"class="p-button p-button-secondary">Navigálás az adatokra</p-button>
+<p-button *ngIf="isAdmin" (click)="navigateToResult()"class="p-button p-button-secondary">Navigálás az Adatokhoz</p-button>
+<p></p>
+<p-button *ngIf="isAdmin" (click)="navigateToFinish()"class="p-button p-button-secondary">Navigálás az Összefoglaláshoz</p-button>
 </div>
 
 

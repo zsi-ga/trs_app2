@@ -48,3 +48,15 @@ span {
   display: inline-block;
   margin-right: 10px;
 }
+
+
+.button-container {
+  display: flex;
+  align-items: center; 
+  gap: 10px; 
+  margin-bottom: 20px;
+}
+
+.registrations-info {
+  margin-left: auto; 
+}

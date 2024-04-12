@@ -1,12 +1,11 @@
 <div>
-
-  <button (click)="navigateToFinish()"class="p-button p-button-secondary">Navigálás az összegzéshez</button>
-  <p></p>
-  <button (click)="refreshData()" class="p-button p-button-secondary">Adatok frissítése</button>
-  <p>Regisztrációk: {{ registrations }}</p>
+  <div class="button-container">
+    <button (click)="navigateToHome()" class="p-button p-button-secondary">Vissza</button>
+    <button (click)="refreshData()" class="p-button p-button-secondary">Adatok frissítése</button>
+    <span class="registrations-info">Regisztrációk: {{ registrations }}</span>
+  </div>
   <table>
     <thead>
-      <p></p>
       <tr>
         <th>Teljes Név</th>
         <th>Osztály</th>
@@ -29,3 +28,4 @@
       </tr>
     </tbody>
   </table>
+</div>

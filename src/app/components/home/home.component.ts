@@ -20,6 +20,10 @@ export class HomeComponent {
     this.router.navigate(['/finish']);
   }
 
+  navigateToResult() {
+    this.router.navigate(['/result']);
+  }
+
   navigateToQuestionSc() {
     sessionStorage.clear();
     this.router.navigate(['/question-tc']);

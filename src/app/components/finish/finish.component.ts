@@ -1,28 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';  
-
-interface TeacherResult {
-  teacherName: string;
-  teacherPoints: number;
-  classification?: string;
-}
-
-interface UserData {
-  fullName: string;
-  email: string;
-  totalSchoolPoints: number;
-  teacherResults: TeacherResult[];
-}
-
-interface ClassGroup {
-  class: string;
-  registrations: number;
-  totalSchoolPoints: number;
-  averageSchoolPoints: number;
-  classification: string;
-  studentData: UserData[];
-}
+import { ClassGroup } from 'src/app/interfaces/classgroup';
 
 @Component({
   selector: 'app-finish',
@@ -31,7 +10,6 @@ interface ClassGroup {
 })
 export class FinishComponent implements OnInit {
   classGroups: ClassGroup[] = [];
-button: any;
 
   constructor(private http: HttpClient, private router: Router) {}  
 
@@ -47,11 +25,8 @@ button: any;
   
         data.forEach(item => {
           if (item.email) {
-           
             const className = item.fullClass && typeof item.fullClass === 'object' ? item.fullClass.name : item.fullClass;
-            if (!className) {
-              return;
-            }
+            if (!className) return;
   
             if (!classMap[className]) {
               classMap[className] = {
@@ -111,7 +86,6 @@ button: any;
       }
     );
   }
-  
 
   getClassification(totalSchoolPoints: number): string {
     if (totalSchoolPoints >= 0 && totalSchoolPoints <= 10) {
@@ -127,10 +101,12 @@ button: any;
     }
   }
 
+  navigateToHome() {
+    this.router.navigate(['/home']); 
+  }
+
   logOut() {
     sessionStorage.clear();
-    this.router.navigate(['login']);
+    this.router.navigate(['/login']);
   }
-    
-   
 }

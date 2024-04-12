@@ -1,11 +1,69 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "email": "admin@ktch.hu",
       "password": "admin",
       "role": "admin"
+    },
+    {
+      "id": "315f",
+      "fullName": "Teszt Elek",
+      "fullClass": {
+        "name": "SZOFT I/1/N"
+      },
+      "email": "tesztelek@ktch.hu",
+      "password": "Tesztelek123"
+    },
+    {
+      "id": "f555",
+      "result_tc": 29
+    },
+    {
+      "id": "9873",
+      "Bakos András": 30,
+      "Bedő Gertrúd": 26
+    },
+    {
+      "id": "b92d",
+      "fullName": "Mikka Makka",
+      "fullClass": {
+        "name": "PSZU I/2/E"
+      },
+      "email": "mikkamakka@ktch.hu",
+      "password": "MikkaMakka"
+    },
+    {
+      "id": "d93a",
+      "result_tc": 41
+    },
+    {
+      "id": "8e34",
+      "Bálint Dezső": 13,
+      "Bódai Károly": 21,
+      "Fügedi Beatrix": 30,
+      "Hoffmann Vilmos": 28
+    },
+    {
+      "id": "cd82",
+      "fullName": "Teszt Ujra",
+      "fullClass": {
+        "name": "SZOFT I/1/N"
+      },
+      "email": "tesztujra@ktch.hu",
+      "password": "TesztUjra"
+    },
+    {
+      "id": "1a53",
+      "result_tc": 34
+    },
+    {
+      "id": "992f",
+      "dr. Orosz Róza": 30,
+      "Eszterhai Judit": 34,
+      "Fischer-Deeks, Ben": 30,
+      "Horváth Boglárka": 32
     }
-   
+
   ]
 }

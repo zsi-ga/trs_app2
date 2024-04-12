@@ -21,7 +21,6 @@
     background-color: #0056b3;
   }
   .login-container {
-    background-image: url('/assets/login.jpg'); 
     background-size: cover;
     background-position: center;
     min-height: 100vh; 

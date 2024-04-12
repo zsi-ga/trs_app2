@@ -1,7 +1,7 @@
 
 <div class="register-container">
 <form [formGroup]="registerForm" (ngSubmit)="submitDetails()">
-  <p-card header="Regisztrálás" [style]="{ width: '360px' }">
+  <p-card header="REGISZTRÁCIÓ" [style]="{ width: '360px' }">
     <div class="field">
       <label for="fullName">Név</label>
       <input
@@ -106,7 +106,7 @@
       </small>
     </div>
     <p-button
-      label="REGISZTRÁCIÓ"
+      label="Regisztrálás"
       styleClass="w-full"
       [disabled]="registerForm.invalid"
       type="submit"

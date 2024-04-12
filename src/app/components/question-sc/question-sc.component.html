@@ -1,5 +1,5 @@
 <div>
-  <label for="scoreSelection">Válassza ki az az oktatót aki tanítja, majd értékelje!</label>
+  <label for="scoreSelection">Válassza ki az menüből az oktatót aki tanítja, majd értékelje!</label>
   <select id="scoreSelection" [(ngModel)]="selectedScore" (change)="updateSelectedScore()">
     <option value="0">Válasszon!</option>
     <option *ngFor="let option of options" [value]="option.value" [disabled]="option.disabled">{{ option.label }}</option>
@@ -12,19 +12,17 @@
     <input type="range" min="1" max="5" [(ngModel)]="question.score" [disabled]="selectedScore === 0">
     <span>{{ question.score }}</span>
   </div>
-  
+  <p></p>
+  <p></p>
   <p-button class="save-button" (click)="saveResults()">Mentés</p-button>
 </div>
-
 <div *ngIf="selectedScore === 0">
   <p></p>
   <p>Addig értékeljen amíg talál olyan oktatót, aki tanítja! Ha nincs több nyomja meg a Kijelentkezéshez gombot!</p>
 </div>
-
-<p>
-
-</p>
-
+<p></p>
+<p></p>
 <div *ngIf="options.length > 1">
+  <p></p>
   <p-button class="save-button" (click)="saveResultsAndLogout()">Kijelentkezéshez</p-button>
 </div>

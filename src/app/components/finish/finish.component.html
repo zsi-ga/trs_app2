@@ -1,31 +1,33 @@
-<button (click)="refreshData()" class="p-button p-button-secondary">Adatok frissítése</button>
-<p></p>
-<p-button class="LogOut" (click)="logOut()">Kijelentkezés</p-button>
+<div class="button-container">
+  <button (click)="navigateToHome()" class="p-button p-button-secondary">Vissza</button>
+  <button (click)="refreshData()" class="p-button p-button-secondary">Adatok frissítése</button>
+  <p-button label="Kijelentkezés" (onClick)="logOut()"></p-button>
+</div>
 <table>
-  <thead>
-    <tr>
-      <th>Osztály</th>
-      <th>Regisztrációk</th>
-      <th>Iskola pont</th>
-      <th>Iskola minősítése</th>
-      <th>Oktatók és pontjaik</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let classGroup of classGroups">
-      <td>{{ classGroup.class }}</td>
-      <td>{{ classGroup.registrations }}</td>
-      <td>{{ classGroup.totalSchoolPoints }}</td>
-      <td>{{ classGroup.classification }}</td>
-      <td>
-        <ul>
-          <li *ngFor="let student of classGroup.studentData">
-            <span *ngFor="let teacher of student.teacherResults">
-              {{ teacher.teacherName }}: {{ teacher.teacherPoints }}
-            </span>
-          </li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
+<thead>
+  <tr>
+    <th>Osztály</th>
+    <th>Regisztrációk</th>
+    <th>Iskola pont</th>
+    <th>Iskola minősítése</th>
+    <th>Oktatók és pontjaik</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let classGroup of classGroups">
+    <td>{{ classGroup.class }}</td>
+    <td>{{ classGroup.registrations }}</td>
+    <td>{{ classGroup.totalSchoolPoints }}</td>
+    <td>{{ classGroup.classification }}</td>
+    <td>
+      <ul>
+        <li *ngFor="let student of classGroup.studentData">
+          <span *ngFor="let teacher of student.teacherResults">
+            {{ teacher.teacherName }}: {{ teacher.teacherPoints }}
+          </span>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</tbody>
 </table>
