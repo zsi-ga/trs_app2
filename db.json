@@ -63,7 +63,25 @@
       "Eszterhai Judit": 34,
       "Fischer-Deeks, Ben": 30,
       "Horváth Boglárka": 32
+    },
+    {
+      "id": "4f3c",
+      "fullName": "Kis Piroska",
+      "fullClass": {
+        "name": "PSZU II/E"
+      },
+      "email": "kis.piroska@ktch.hu",
+      "password": "Kispiros"
+    },
+    {
+      "id": "7cf6",
+      "result_tc": 33
+    },
+    {
+      "id": "1cd7",
+      "Czibolyáné Nagy Anna": 18,
+      "dr. Orosz Róza": 20,
+      "Eszterhai Judit": 18
     }
-
   ]
 }
